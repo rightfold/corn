@@ -17,7 +17,7 @@ impl PageTableEntry {
     /// point to another page table (in case this page table entry is in the
     /// first, second, or third page table), or to a page (in case this page
     /// table entry is in the fourth page table).
-    pub fn page_table_address(&self) -> PhysicalAddress {
+    pub fn physical_address(&self) -> PhysicalAddress {
         // The physical address is stored in bits [12 .. 52). It is to be
         // page-aligned, so after unsetting the remaining bits of the entry, a
         // 52-bit address has been formed.
