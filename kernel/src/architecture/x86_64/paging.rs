@@ -2,6 +2,11 @@
 
 use address::PhysicalAddress;
 
+/// Page table.
+#[repr(C, packed)]
+#[derive(Clone, Copy)]
+pub struct PageTable(pub [PageTableEntry; 512]);
+
 /// Page table entry.
 #[repr(C, packed)]
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
